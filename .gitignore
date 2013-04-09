@@ -1,5 +1,5 @@
 # Nikita Kouevda
-# 2013/04/08
+# 2013/04/09
 
 # OS X Finder
 .DS_Store
@@ -10,5 +10,7 @@
 # Node modules
 node_modules
 
-# Server data
-data
+# Output files
+data/online.txt
+data/offline.txt
+data/best_hive.txt
