@@ -1,5 +1,5 @@
 // Nikita Kouevda
-// 2013/04/08
+// 2013/04/09
 
 // Required libraries
 var express = require('express');
@@ -61,11 +61,16 @@ loadFiles();
 (function updateFiles() {
   // Run the update script
   exec(__dirname + '/bin/update.sh', function (err, stdout, stderr) {
-    console.log(stdout);
-    console.error(stderr);
-
     if (err) {
       throw err;
+    }
+
+    if (stdout) {
+      console.log(stdout);
+    }
+
+    if (stderr) {
+      console.error(stderr);
     }
 
     // Load the new information
