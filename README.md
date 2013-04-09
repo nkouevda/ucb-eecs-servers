@@ -22,3 +22,7 @@ Edit the information in `bin/config.sh` and then execute:
     node server.js
 
 This will also run remote update every 5 minutes.
+
+## License
+
+Licensed under the [MIT License](http://www.opensource.org/licenses/MIT).
