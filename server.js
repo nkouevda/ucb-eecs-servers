@@ -42,7 +42,7 @@ var loadFiles = function () {
 
   // Retrieve the modification time and update the subtitle
   var mtime = fs.statSync(__dirname + '/data/online.txt').mtime;
-  subtitle = baseSubtitle + mtime.getHours() + ':' + mtime.getMinutes();
+  subtitle = baseSubtitle + mtime.toString().match(/\d+:\d+:\d+/);
 
   // Load the new best hive
   fs.readFile(__dirname + '/data/best_hive.txt', 'utf-8', function (err, data) {
