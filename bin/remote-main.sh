@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# Nikita Kouevda
+# 2013/04/09
+
+# Store the script name and directory
+script_name="${0##*/}"
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Change directory to parent directory of location of script
+cd "$script_dir/.."
+
+# Load variables
+. bin/config.sh
+
+# The server list
+servers_file="data/servers.txt"
+
+# The online and offline files
+online_file="data/online.txt"
+offline_file="data/offline.txt"
+
+# Clear the offline file and make the temporary directory
+> "$offline_file"
+mkdir -p tmp
+
+# Iterate over servers, skipping comments and empty lines
+for server in $(egrep -v '^[#$]' "$servers_file"); do
+    # Background subshell for concurrent execution
+    (
+        # Retrieve and write output
+        ssh "${ssh_opts[@]}" "$user@$server" "~/ststics/bin/remote.sh $server" > "tmp/$server" 2>/dev/null
+
+        # Record the server as offline if ssh returned non-0
+        [[ "$?" -ne 0 ]] && echo "$server" >> "$offline_file"
+    ) &
+done
+
+# Wait for all background jobs to finish
+wait
+
+# Generate the new online file and remove the temporary directory
+cat tmp/* > "$online_file"
+rm -rf tmp
