@@ -1,7 +1,7 @@
 <!doctype html>
 
 <!-- Nikita Kouevda, Anthony Sutardja -->
-<!-- 2012/04/08 -->
+<!-- 2012/04/09 -->
 
 <html lang="en">
 
@@ -27,12 +27,14 @@
   <div class="center-outer">
     <div class="center-inner">
       <table id="servers">
-        <tbody>
+        <thead>
           <tr>
-            <th><a href="javascript:sortServerTable(0);">Server</a></th>
-            <th><a href="javascript:sortServerTable(1);">Users</a></th>
-            <th><a href="javascript:sortServerTable(2);">Load</a></th>
+            <th><a href="javascript:sortServerTable(0);">Server<img src="/static/img/sort.png" title="Sort" alt="Sort" /></a></th>
+            <th><a href="javascript:sortServerTable(1);">Users<img src="/static/img/sort.png" title="Sort" alt="Sort" /></a></th>
+            <th><a href="javascript:sortServerTable(2);">Load<img src="/static/img/sort.png" title="Sort" alt="Sort" /></a></th>
           </tr>
+        </thead>
+        <tbody>
 <% servers.forEach(function (server) { -%>
 <% if (server.online) { -%>
           <tr class="server-online">

@@ -1,5 +1,5 @@
 /* Nikita Kouevda, Anthony Sutardja */
-/* 2013/04/08 */
+/* 2013/04/09 */
 
 /* General */
 
@@ -13,7 +13,7 @@ body {
 }
 
 #container {
-  width: 1000px;
+  width: 960px;
   min-height: 100%;
   margin: 0 auto;
   overflow: hidden;
@@ -47,11 +47,11 @@ h1 {
 }
 
 #status {
-  color: #fff;
+  color: #ddd;
   font-size: 1em;
   font-style: italic;
   text-shadow: 1px 1px #111;
-  margin: 25px;
+  margin-top: 25px;
 }
 
 /* Content */
@@ -64,15 +64,20 @@ table {
 
 th {
   background-color: #999;
-  padding: 12px 40px;
+  padding: 15px 45px;
 }
 
 th a {
   color: #111;
+  text-decoration: none;
+}
+
+th img {
+  margin-left: 10px;
 }
 
 td {
-  padding: 8px 40px;
+  padding: 10px 30px;
 }
 
 .server-online:nth-child(even) {
