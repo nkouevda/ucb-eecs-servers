@@ -1,0 +1,124 @@
+/* Nikita Kouevda, Anthony Sutardja */
+/* 2013/04/08 */
+
+/* General */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Helvetica', 'Arial', 'Sans';
+  background-color: #ddd;
+}
+
+#container {
+  width: 1000px;
+  min-height: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: #444;
+}
+
+.center-outer {
+  position: relative;
+  float: left;
+  left: 50%;
+}
+
+.center-inner {
+  position: relative;
+  float: left;
+  left: -50%;
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  margin: 50px;
+}
+
+h1 {
+  color: #fff;
+  font-family: 'Helvetica Neue';
+  font-size: 2em;
+  text-shadow: 2px 2px #111;
+}
+
+#status {
+  color: #fff;
+  font-size: 1em;
+  font-style: italic;
+  text-shadow: 1px 1px #111;
+  margin: 25px;
+}
+
+/* Content */
+
+table {
+  text-align: center;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+
+th {
+  background-color: #999;
+  padding: 12px 40px;
+}
+
+th a {
+  color: #111;
+}
+
+td {
+  padding: 8px 40px;
+}
+
+.server-online:nth-child(even) {
+  background-color: #2a2;
+}
+
+.server-online:nth-child(odd) {
+  background-color: #3b3;
+}
+
+.server-offline:nth-child(even) {
+  background-color: #a22;
+}
+
+.server-offline:nth-child(odd) {
+  background-color: #b33;
+}
+
+/* Round top left on header row */
+th:first-child {
+  -webkit-border-top-left-radius: 8px;
+     -moz-border-top-left-radius: 8px;
+       -o-border-top-left-radius: 8px;
+          border-top-left-radius: 8px;
+}
+
+/* Round top right on header row */
+th:last-child {
+  -webkit-border-top-right-radius: 8px;
+     -moz-border-top-right-radius: 8px;
+       -o-border-top-right-radius: 8px;
+          border-top-right-radius: 8px;
+}
+
+/* Round bottom left on last row */
+tr:last-child td:first-child {
+  -webkit-border-bottom-left-radius: 8px;
+     -moz-border-bottom-left-radius: 8px;
+       -o-border-bottom-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+}
+
+/* Round bottom right on last row */
+tr:last-child td:last-child {
+  -webkit-border-bottom-right-radius: 8px;
+     -moz-border-bottom-right-radius: 8px;
+       -o-border-bottom-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+}

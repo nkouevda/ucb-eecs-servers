@@ -1,0 +1,14 @@
+# Nikita Kouevda
+# 2013/04/08
+
+# OS X Finder
+.DS_Store
+
+# Temporary Vim files
+*.swp
+
+# Node modules
+node_modules
+
+# Server data
+data

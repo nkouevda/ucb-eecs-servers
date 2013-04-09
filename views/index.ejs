@@ -1,0 +1,57 @@
+<!doctype html>
+
+<!-- Nikita Kouevda, Anthony Sutardja -->
+<!-- 2012/04/08 -->
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Language" content="en" />
+  <title><%= title %></title>
+  <link href="/static/css/reset.css" rel="stylesheet" type="text/css" />
+  <link href="/static/css/index.css" rel="stylesheet" type="text/css" />
+  <script src="/static/js/sort.js" type="text/javascript"></script>
+</head>
+
+<body onload="sortServerTable(2);">
+
+<div id="container">
+
+<header>
+  <h1><%= header %></h1>
+  <p id="status"><%= status %></p>
+</header>
+
+<section id="content">
+  <div class="center-outer">
+    <div class="center-inner">
+      <table id="servers">
+        <tbody>
+          <tr>
+            <th><a href="javascript:sortServerTable(0);">Server</a></th>
+            <th><a href="javascript:sortServerTable(1);">Users</a></th>
+            <th><a href="javascript:sortServerTable(2);">Load</a></th>
+          </tr>
+<% servers.forEach(function (server) { -%>
+<% if (server.online) { -%>
+          <tr class="server-online">
+<% } else { -%>
+          <tr class="server-offline">
+<% } -%>
+            <td class="server-name"><%= server.name %></td>
+            <td class="server-users"><%= server.users %></td>
+            <td class="server-load"><%= server.load %></td>
+          </tr>
+<% }); -%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+</div>
+
+</body>
+
+</html>
