@@ -1,17 +1,17 @@
 {
   "name": "ststics.co",
   "version": "0.0.1",
-  "description": "Current Status of EECS Servers",
+  "description": "Current usage data for UC Berkeley's EECS servers",
   "author": "Nikita Kouevda <nkouevda@gmail.com>",
   "contributors": [ 
     "Anthony Sutardja <anthony.sutardja@gmail.com>"
   ],
   "engines": {
-    "node": "~0.8",
-    "npm": "~1.2"
+    "node": ">=0.8",
+    "npm": ">=1.2"
   },
   "dependencies": {
-    "express": "3.x",
-    "ejs": "~0.8"
+    "express": ">=3",
+    "ejs": ">=0.8"
   }
 }
