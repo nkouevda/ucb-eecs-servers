@@ -50,7 +50,7 @@ var loadFiles = function () {
   });
 
   // Retrieve the modification time and update the subtitle
-  fs.stat(__dirname + '/data/online.txt', 'utf-8', function (err, stats) {
+  fs.stat(__dirname + '/data/online.txt', function (err, stats) {
     if (err) {
       throw err;
     } else {
