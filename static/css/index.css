@@ -1,7 +1,5 @@
 /* Nikita Kouevda, Anthony Sutardja */
-/* 2013/04/09 */
-
-/* General */
+/* 2013/04/18 */
 
 html, body {
   height: 100%;
@@ -15,28 +13,29 @@ body {
 #container {
   width: 960px;
   min-height: 100%;
-  margin: 0 auto;
   overflow: hidden;
   background-color: #444;
+  margin: 0 auto;
 }
 
 .center-outer {
+  clear: both;
   position: relative;
   float: left;
   left: 50%;
 }
 
 .center-inner {
+  clear: both;
   position: relative;
   float: left;
   left: -50%;
 }
 
-/* Header */
-
-header {
+header, footer {
+  clear: both;
   text-align: center;
-  margin: 50px;
+  padding: 50px 0;
 }
 
 h1 {
@@ -46,20 +45,34 @@ h1 {
   text-shadow: 2px 2px #111;
 }
 
-#status {
+.subtitle {
   color: #ddd;
+  font-family: 'Helvetica Neue';
   font-size: 1em;
-  font-style: italic;
   text-shadow: 1px 1px #111;
-  margin-top: 25px;
+  margin: 30px 0 0 0;
 }
 
-/* Content */
+.subtitle a {
+  color: #ddd;
+  text-decoration: none;
+  border-bottom: 1px dashed #ddd;
+}
+
+.subtitle a:hover {
+  border-bottom: 1px solid #ddd;
+}
+
+.separator {
+  margin: 0 10px;
+}
+
+#content {
+  clear: both;
+}
 
 table {
   text-align: center;
-  border-collapse: collapse;
-  margin-bottom: 50px;
 }
 
 th {
@@ -73,25 +86,29 @@ th a {
 }
 
 th img {
-  margin-left: 10px;
+  padding-left: 10px;
 }
 
 td {
   padding: 10px 30px;
 }
 
+/* Dark green for even online */
 .server-online:nth-child(even) {
   background-color: #2a2;
 }
 
+/* Light green for odd online */
 .server-online:nth-child(odd) {
   background-color: #3b3;
 }
 
+/* Dark red for even offline */
 .server-offline:nth-child(even) {
   background-color: #a22;
 }
 
+/* Light red for odd offline */
 .server-offline:nth-child(odd) {
   background-color: #b33;
 }
