@@ -1,11 +1,7 @@
 #!/bin/bash
 
 # Nikita Kouevda
-# 2013/04/09
-
-# Store the script name and directory
-script_name="${0##*/}"
-script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+# 2013/04/27
 
 # Number of users online
 users=$(who | wc -l | tr -d ' ')
