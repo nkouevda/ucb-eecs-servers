@@ -1,7 +1,12 @@
 # Nikita Kouevda
-# 2013/04/08
+# 2013/05/10
 
 # Main Servers
+bcom11.eecs.berkeley.edu
+bcom18.eecs.berkeley.edu
+bcom20.eecs.berkeley.edu
+bcom21.eecs.berkeley.edu
+bcom22.eecs.berkeley.edu
 cory.eecs.berkeley.edu
 cube.cs.berkeley.edu
 ilinux1.eecs.berkeley.edu
@@ -14,6 +19,43 @@ solar.cs.berkeley.edu
 sphere.cs.berkeley.edu
 star.cs.berkeley.edu
 torus.cs.berkeley.edu
+
+# 125 Cory Hall
+p380-11.eecs.berkeley.edu
+p380-12.eecs.berkeley.edu
+p380-13.eecs.berkeley.edu
+p380-14.eecs.berkeley.edu
+p380-15.eecs.berkeley.edu
+p380-16.eecs.berkeley.edu
+p380-17.eecs.berkeley.edu
+p380-18.eecs.berkeley.edu
+p380-19.eecs.berkeley.edu
+p380-20.eecs.berkeley.edu
+p380-21.eecs.berkeley.edu
+p380-22.eecs.berkeley.edu
+p380-23.eecs.berkeley.edu
+p380-24.eecs.berkeley.edu
+p380-25.eecs.berkeley.edu
+p380-26.eecs.berkeley.edu
+p380-27.eecs.berkeley.edu
+p380-28.eecs.berkeley.edu
+p380-29.eecs.berkeley.edu
+p380-30.eecs.berkeley.edu
+p380-31.eecs.berkeley.edu
+p380-32.eecs.berkeley.edu
+p380-33.eecs.berkeley.edu
+p380-34.eecs.berkeley.edu
+p380-35.eecs.berkeley.edu
+p380-36.eecs.berkeley.edu
+p380-37.eecs.berkeley.edu
+p380-38.eecs.berkeley.edu
+p380-39.eecs.berkeley.edu
+p380-40.eecs.berkeley.edu
+p380-41.eecs.berkeley.edu
+p380-42.eecs.berkeley.edu
+p380-43.eecs.berkeley.edu
+p380-44.eecs.berkeley.edu
+p380-45.eecs.berkeley.edu
 
 # 275 Soda Hall
 america.cs.berkeley.edu
@@ -79,43 +121,6 @@ hive25.cs.berkeley.edu
 hive26.cs.berkeley.edu
 hive27.cs.berkeley.edu
 hive28.cs.berkeley.edu
-
-# 380 Soda Hall
-p380-11.eecs.berkeley.edu
-p380-12.eecs.berkeley.edu
-p380-13.eecs.berkeley.edu
-p380-14.eecs.berkeley.edu
-p380-15.eecs.berkeley.edu
-p380-16.eecs.berkeley.edu
-p380-17.eecs.berkeley.edu
-p380-18.eecs.berkeley.edu
-p380-19.eecs.berkeley.edu
-p380-20.eecs.berkeley.edu
-p380-21.eecs.berkeley.edu
-p380-22.eecs.berkeley.edu
-p380-23.eecs.berkeley.edu
-p380-24.eecs.berkeley.edu
-p380-25.eecs.berkeley.edu
-p380-26.eecs.berkeley.edu
-p380-27.eecs.berkeley.edu
-p380-28.eecs.berkeley.edu
-p380-29.eecs.berkeley.edu
-p380-30.eecs.berkeley.edu
-p380-31.eecs.berkeley.edu
-p380-32.eecs.berkeley.edu
-p380-33.eecs.berkeley.edu
-p380-34.eecs.berkeley.edu
-p380-35.eecs.berkeley.edu
-p380-36.eecs.berkeley.edu
-p380-37.eecs.berkeley.edu
-p380-38.eecs.berkeley.edu
-p380-39.eecs.berkeley.edu
-p380-40.eecs.berkeley.edu
-p380-41.eecs.berkeley.edu
-p380-42.eecs.berkeley.edu
-p380-43.eecs.berkeley.edu
-p380-44.eecs.berkeley.edu
-p380-45.eecs.berkeley.edu
 
 # 200 Sutardja Dai Hall
 akane.cs.berkeley.edu
