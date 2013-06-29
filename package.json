@@ -1,14 +1,14 @@
 {
-  "name": "ststics.co",
+  "name": "ucb-eecs-servers",
   "version": "0.0.1",
   "description": "Current usage data for UC Berkeley's EECS servers.",
   "author": "Nikita Kouevda <nkouevda@gmail.com>",
-  "contributors": [ 
+  "contributors": [
     "Anthony Sutardja <anthony.sutardja@gmail.com>"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nkouevda/ststics.co.git"
+    "url": "https://github.com/nkouevda/ucb-eecs-servers.git"
   },
   "license": "MIT",
   "engines": {
@@ -16,7 +16,7 @@
     "npm": "1.2.x"
   },
   "dependencies": {
-    "express": "3.1.x",
+    "express": "3.3.x",
     "ejs": "0.8.x"
   }
 }

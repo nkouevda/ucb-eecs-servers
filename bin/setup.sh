@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nikita Kouevda
-# 2013/04/27
+# 2013/06/28
 
 # Change directory to parent directory of location of script
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
@@ -10,8 +10,9 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.."
 . bin/config.sh
 
 # Make the required directories
-ssh "${ssh_opts[@]}" "$user@$server" "mkdir -p ~/ststics/{bin,data}"
+ssh "${ssh_opts[@]}" "$user@$server" "mkdir -p ~/$remote_dir/{bin,data}"
 
 # Copy the necessary files over
-scp "${ssh_opts[@]}" bin/{remote-main,remote,config}.sh "$user@$server:ststics/bin/"
-scp "${ssh_opts[@]}" data/servers.txt "$user@$server:ststics/data/"
+scp "${ssh_opts[@]}" data/servers.txt "$user@$server:$remote_dir/data/"
+scp "${ssh_opts[@]}" bin/{remote-main,remote,config}.sh \
+    "$user@$server:$remote_dir/bin/"

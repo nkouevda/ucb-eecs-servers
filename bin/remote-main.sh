@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Nikita Kouevda
-# 2013/04/27
+# 2013/06/28
 
 # Change directory to parent directory of location of script
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
@@ -25,7 +25,8 @@ for server in $(egrep -v '^[#$]' "$servers_file"); do
     # Background subshell for concurrent execution
     (
         # Retrieve and write output
-        ssh "${ssh_opts[@]}" "$user@$server" "~/ststics/bin/remote.sh $server" > "tmp/$server" 2>/dev/null
+        ssh "${ssh_opts[@]}" "$user@$server" \
+            "~/$remote_dir/bin/remote.sh $server" > "tmp/$server" 2>/dev/null
 
         # Record the server as offline if ssh returned non-0
         [[ "$?" -ne 0 ]] && echo "$server" >> "$offline_file"
