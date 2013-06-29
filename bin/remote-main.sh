@@ -25,7 +25,7 @@ for server in $(egrep -v '^[#$]' "$servers_file"); do
     # Background subshell for concurrent execution
     (
         # Retrieve and write output
-        ssh "${ssh_opts[@]}" "$user@$server" \
+        ssh "${ssh_opts[@]}" "$username@$server" \
             "~/$remote_dir/bin/remote.sh $server" > "tmp/$server" 2>/dev/null
 
         # Record the server as offline if ssh returned non-0

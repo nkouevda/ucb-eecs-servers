@@ -10,10 +10,10 @@ cd "$(dirname "${BASH_SOURCE[0]}")/.."
 . bin/config.sh
 
 # Run the remote update script
-ssh "${ssh_opts[@]}" "$user@$server" "~/$remote_dir/bin/remote-main.sh"
+ssh "${ssh_opts[@]}" "$username@$server" "~/$remote_dir/bin/remote-main.sh"
 
 # Copy the online and offline files
-scp "${ssh_opts[@]}" "$user@$server:$remote_dir/data/{on,off}line.txt" data/
+scp "${ssh_opts[@]}" "$username@$server:$remote_dir/data/{on,off}line.txt" data/
 
 # Update the best hive server
 sort -nrst ',' -k 2,2 data/online.txt | sort -nrst ',' -k 3,3 | grep 'hive' \
