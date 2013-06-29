@@ -1,5 +1,5 @@
 /* Nikita Kouevda, Anthony Sutardja */
-/* 2013/04/18 */
+/* 2013/06/28 */
 
 html, body {
   height: 100%;
@@ -117,6 +117,7 @@ td {
 th:first-child {
   -webkit-border-top-left-radius: 8px;
      -moz-border-top-left-radius: 8px;
+      -ms-border-top-left-radius: 8px;
        -o-border-top-left-radius: 8px;
           border-top-left-radius: 8px;
 }
@@ -125,6 +126,7 @@ th:first-child {
 th:last-child {
   -webkit-border-top-right-radius: 8px;
      -moz-border-top-right-radius: 8px;
+      -ms-border-top-right-radius: 8px;
        -o-border-top-right-radius: 8px;
           border-top-right-radius: 8px;
 }
@@ -133,6 +135,7 @@ th:last-child {
 tr:last-child td:first-child {
   -webkit-border-bottom-left-radius: 8px;
      -moz-border-bottom-left-radius: 8px;
+      -ms-border-bottom-left-radius: 8px;
        -o-border-bottom-left-radius: 8px;
           border-bottom-left-radius: 8px;
 }
@@ -141,6 +144,7 @@ tr:last-child td:first-child {
 tr:last-child td:last-child {
   -webkit-border-bottom-right-radius: 8px;
      -moz-border-bottom-right-radius: 8px;
+      -ms-border-bottom-right-radius: 8px;
        -o-border-bottom-right-radius: 8px;
           border-bottom-right-radius: 8px;
 }
