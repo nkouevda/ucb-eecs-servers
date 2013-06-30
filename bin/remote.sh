@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Nikita Kouevda
-# 2013/04/27
+# 2013/06/30
 
 # Number of users online
-users=$(who | wc -l | tr -d ' ')
+users=$(who | wc -l | awk '{print $1}')
 
 # Load average for past 5 minutes
-load=$(uptime | perl -ne 'm/\d+\.\d+\W+(\d+\.\d+)\W+\d+\.\d+/; print $1')
+load=$(uptime | perl -pe 's/.+://; s/,//g' | awk '{print $2}')
 
 # Output information as csv
 echo "$1,$users,$load"
