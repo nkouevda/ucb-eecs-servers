@@ -1,5 +1,5 @@
 /* Nikita Kouevda, Anthony Sutardja */
-/* 2013/06/28 */
+/* 2013/06/29 */
 
 html, body {
   height: 100%;
@@ -48,6 +48,7 @@ h1 {
 .subtitle {
   color: #ddd;
   font-family: 'Helvetica Neue';
+  font-style: italic;
   font-size: 1em;
   text-shadow: 1px 1px #111;
   margin: 30px 0 0 0;
