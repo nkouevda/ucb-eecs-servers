@@ -1,5 +1,5 @@
 // Nikita Kouevda
-// 2013/06/28
+// 2013/07/04
 
 // Sort by the first element of the given pairs
 var sortPairsNumerical = function (a, b) {
@@ -10,11 +10,11 @@ var sortPairsNumerical = function (a, b) {
 var sortServerTable = function (column) {
   var table = document.getElementById('servers').tBodies[0];
   var online = [], offline = [];
-  var i, length;
+  var i, length, row, content;
 
   for (i = 0, length = table.rows.length; i < length; ++i) {
-    var row = table.rows[i];
-    var content = row.cells[column].textContent || row.cells[column].innerText;
+    row = table.rows[i];
+    content = row.cells[column].textContent || row.cells[column].innerText;
 
     // Interpret the values as floats unless sorting by name
     if (column !== 0) {
@@ -22,7 +22,7 @@ var sortServerTable = function (column) {
     }
 
     // Add this row to the corresponding array
-    if (row.className == 'server-online') {
+    if (row.className === 'server-online') {
       online.push([content, row]);
     } else {
       offline.push([content, row]);
@@ -33,7 +33,7 @@ var sortServerTable = function (column) {
   if (column === 0) {
     online.sort();
     offline.sort();
-  } else{
+  } else {
     online.sort(sortPairsNumerical).reverse();
     offline.sort(sortPairsNumerical).reverse();
   }
