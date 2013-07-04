@@ -1,5 +1,5 @@
 /* Nikita Kouevda, Anthony Sutardja */
-/* 2013/06/29 */
+/* 2013/07/04 */
 
 html, body {
   height: 100%;
@@ -7,29 +7,29 @@ html, body {
 
 body {
   font-family: 'Helvetica', 'Arial', 'Sans';
-  background-color: #ddd;
+  background-color: #dddddd;
+}
+
+.center-outer, .center-inner {
+  clear: both;
+  position: relative;
+  float: left;
+}
+
+.center-outer {
+  left: 50%;
+}
+
+.center-inner {
+  left: -50%;
 }
 
 #container {
   width: 960px;
   min-height: 100%;
   overflow: hidden;
-  background-color: #444;
+  background-color: #444444;
   margin: 0 auto;
-}
-
-.center-outer {
-  clear: both;
-  position: relative;
-  float: left;
-  left: 50%;
-}
-
-.center-inner {
-  clear: both;
-  position: relative;
-  float: left;
-  left: -50%;
 }
 
 header, footer {
@@ -38,30 +38,33 @@ header, footer {
   padding: 50px 0;
 }
 
-h1 {
-  color: #fff;
+header > h1 {
+  color: #ffffff;
   font-family: 'Helvetica Neue';
   font-size: 2em;
-  text-shadow: 2px 2px #111;
+  text-shadow: 2px 2px #111111;
 }
 
 .subtitle {
-  color: #ddd;
+  color: #dddddd;
   font-family: 'Helvetica Neue';
-  font-style: italic;
   font-size: 1em;
-  text-shadow: 1px 1px #111;
+  text-shadow: 1px 1px #111111;
   margin: 30px 0 0 0;
 }
 
-.subtitle a {
-  color: #ddd;
+.link {
+  color: #dddddd;
   text-decoration: none;
-  border-bottom: 1px dashed #ddd;
+  border-bottom: 1px dashed #dddddd;
 }
 
-.subtitle a:hover {
-  border-bottom: 1px solid #ddd;
+.link:hover {
+  border-bottom: 1px solid #dddddd;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .separator {
@@ -77,16 +80,16 @@ table {
 }
 
 th {
-  background-color: #999;
+  background-color: #999999;
   padding: 15px 45px;
 }
 
-th a {
-  color: #111;
+th > a {
+  color: #111111;
   text-decoration: none;
 }
 
-th img {
+th > a > img {
   padding-left: 10px;
 }
 
@@ -96,22 +99,22 @@ td {
 
 /* Dark green for even online */
 .server-online:nth-child(even) {
-  background-color: #2a2;
+  background-color: #22aa22;
 }
 
 /* Light green for odd online */
 .server-online:nth-child(odd) {
-  background-color: #3b3;
+  background-color: #33bb33;
 }
 
 /* Dark red for even offline */
 .server-offline:nth-child(even) {
-  background-color: #a22;
+  background-color: #aa2222;
 }
 
 /* Light red for odd offline */
 .server-offline:nth-child(odd) {
-  background-color: #b33;
+  background-color: #bb3333;
 }
 
 /* Round top left on header row */
