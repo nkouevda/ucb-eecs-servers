@@ -1,70 +1,57 @@
 <!doctype html>
 
 <!-- Nikita Kouevda, Anthony Sutardja -->
-<!-- 2013/07/04 -->
+<!-- 2013/07/16 -->
 
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-Language" content="en" />
-
-  <title><%= title %></title>
-
-  <link href="/static/css/reset.css" rel="stylesheet" type="text/css" />
-  <link href="/static/css/index.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body onload="sortServerTable(2);">
-
-<div id="container">
-
-<header>
-  <h1><%= header %></h1>
-  <p class="subtitle italic"><%= status %></p>
-</header>
-
-<section id="content">
-  <div class="center-outer">
-    <div class="center-inner">
-      <table id="servers">
-        <thead>
-          <tr>
-            <th><a href="javascript:sortServerTable(0);">Server<img src="/static/img/sort.png" title="Sort" alt="Sort" /></a></th>
-            <th><a href="javascript:sortServerTable(1);">Users<img src="/static/img/sort.png" title="Sort" alt="Sort" /></a></th>
-            <th><a href="javascript:sortServerTable(2);">Load<img src="/static/img/sort.png" title="Sort" alt="Sort" /></a></th>
-          </tr>
-        </thead>
-        <tbody>
+  <head>
+    <meta charset="utf-8" />
+    <title><%= title %></title>
+    <link href="/static/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/static/css/index.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="sortServerTable(2);">
+    <div id="container">
+      <header>
+        <h1><%= header %></h1>
+        <p class="subtitle italic"><%= subtitle %></p>
+      </header>
+      <section id="content">
+        <div class="center-outer">
+          <div class="center-inner">
+            <table id="servers">
+              <thead>
+                <tr>
+                  <th><a href="javascript:sortServerTable(0);">Server<img src="/static/img/sort.png" title="Sort" alt="Sort" /></a></th>
+                  <th><a href="javascript:sortServerTable(1);">Users<img src="/static/img/sort.png" title="Sort" alt="Sort" /></a></th>
+                  <th><a href="javascript:sortServerTable(2);">Load<img src="/static/img/sort.png" title="Sort" alt="Sort" /></a></th>
+                </tr>
+              </thead>
+              <tbody>
 <% servers.forEach(function (server) { -%>
 <% if (server.online) { -%>
-          <tr class="server-online">
+                <tr class="server-online">
 <% } else { -%>
-          <tr class="server-offline">
+                <tr class="server-offline">
 <% } -%>
-            <td class="server-name"><%= server.name %></td>
-            <td class="server-users"><%= server.users %></td>
-            <td class="server-load"><%= server.load %></td>
-          </tr>
+                  <td class="server-name"><%= server.name %></td>
+                  <td class="server-users"><%= server.users %></td>
+                  <td class="server-load"><%= server.load %></td>
+                </tr>
 <% }); -%>
-        </tbody>
-      </table>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <span class="subtitle">
+          <a class="link" href="https://github.com/nkouevda/ucb-eecs-servers">Source</a>
+          <span class="separator">&mdash;</span>
+          <a class="link" href="mailto:nkouevda@gmail.com">Contact</a>
+        </span>
+      </footer>
     </div>
-  </div>
-</section>
-
-<footer>
-  <span class="subtitle">
-    <a class="link" href="https://github.com/nkouevda/ucb-eecs-servers">Source</a>
-    <span class="separator">&mdash;</span>
-    <a class="link" href="mailto:nkouevda@gmail.com">Contact</a>
-  </span>
-</footer>
-
-</div>
-
-<script src="/static/js/sort.js" type="text/javascript"></script>
-
-</body>
-
+    <script src="/static/js/sort.js" type="text/javascript"></script>
+  </body>
 </html>

@@ -1,5 +1,5 @@
 // Nikita Kouevda
-// 2013/06/29
+// 2013/07/16
 
 // Required libraries
 var express = require('express');
@@ -7,11 +7,10 @@ var ejs = require('ejs');
 var fs = require('fs');
 var exec = require('child_process').exec;
 
-// Initialize the default contents to be served
-var onlineServers = [], offlineServers = [];
+// Initialize the default content to be served
 var title = 'Current Status of UCB EECS Servers';
-var baseSubtitle = 'Updated every 5 minutes; last updated at ', subtitle = '';
-var bestHive = '';
+var onlineServers = [], offlineServers = [], bestHive = '';
+var refreshRate = 1000 * 60 * 5, lastUpdated = 0, minutesAgo = 0;
 
 // Retrieve the current information
 var loadFiles = function () {
@@ -49,12 +48,12 @@ var loadFiles = function () {
     }
   });
 
-  // Retrieve the modification time and update the subtitle
+  // Update the last updated time
   fs.stat(__dirname + '/data/online.txt', function (err, stats) {
     if (err) {
       throw err;
     } else {
-      subtitle = baseSubtitle + stats.mtime.toString().match(/\d+:\d+:\d+/);
+      lastUpdated = stats.mtime;
     }
   });
 
@@ -71,7 +70,7 @@ var loadFiles = function () {
 // Load the initial information
 loadFiles();
 
-// Update the files every 5 minutes
+// Update the files repeatedly
 (function updateFiles() {
   // Run the update script
   exec(__dirname + '/bin/update.sh', function (err, stdout, stderr) {
@@ -91,8 +90,7 @@ loadFiles();
     }
   });
 
-  // Repeat every 5 minutes
-  setTimeout(updateFiles, 1000 * 60 * 5);
+  setTimeout(updateFiles, refreshRate);
 })();
 
 // Instantiate the app and set up ejs
@@ -106,11 +104,15 @@ app.use('/static', express.static(__dirname + '/static'));
 
 // Serve index.ejs at the root
 app.get('/', function (req, res) {
-  // Render index.ejs with the title, header, status, and servers
+  minutesAgo = Math.floor((new Date() - lastUpdated) / (1000 * 60));
+
+  // Render index.ejs with the header, title, subtitle, and servers
   res.render('index', {
     header: title,
     title: title,
-    status: subtitle,
+    subtitle: 'Updated every ' + (refreshRate / (1000 * 60)) +
+      ' minutes; last updated ' + minutesAgo + ' minute' +
+      (minutesAgo === 1 ? '' : 's') + ' ago',
     servers: onlineServers.concat(offlineServers)
   });
 });
