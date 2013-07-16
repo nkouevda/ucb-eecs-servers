@@ -1,82 +1,60 @@
 /* Nikita Kouevda, Anthony Sutardja */
-/* 2013/07/04 */
-
-html, body {
-  height: 100%;
-}
+/* 2013/07/16 */
 
 body {
-  font-family: 'Helvetica', 'Arial', 'Sans';
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans';
   background-color: #dddddd;
-}
-
-.center-outer, .center-inner {
-  clear: both;
-  position: relative;
-  float: left;
-}
-
-.center-outer {
-  left: 50%;
-}
-
-.center-inner {
-  left: -50%;
 }
 
 #container {
   width: 960px;
-  min-height: 100%;
-  overflow: hidden;
   background-color: #444444;
   margin: 0 auto;
 }
 
-header, footer {
-  clear: both;
+.site-header, .site-footer {
   text-align: center;
-  padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-header > h1 {
-  color: #ffffff;
-  font-family: 'Helvetica Neue';
+.site-header-title {
   font-size: 2em;
+  color: #ffffff;
   text-shadow: 2px 2px #111111;
 }
 
-.subtitle {
-  color: #dddddd;
-  font-family: 'Helvetica Neue';
+.site-header-subtitle {
   font-size: 1em;
+  font-style: italic;
+  color: #dddddd;
   text-shadow: 1px 1px #111111;
-  margin: 30px 0 0 0;
+  margin-top: 30px;
 }
 
-.link {
+.site-footer-link, .separator {
+  font-size: 1.5em;
   color: #dddddd;
+  text-shadow: 1px 1px #111111;
+}
+
+.site-footer-link {
   text-decoration: none;
   border-bottom: 1px dashed #dddddd;
 }
 
-.link:hover {
-  border-bottom: 1px solid #dddddd;
-}
-
-.italic {
-  font-style: italic;
+.site-footer-link:hover {
+  border-bottom-style: solid;
 }
 
 .separator {
-  margin: 0 10px;
-}
-
-#content {
-  clear: both;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 table {
   text-align: center;
+  margin: 0 auto;
 }
 
 th {
@@ -97,27 +75,22 @@ td {
   padding: 10px 30px;
 }
 
-/* Dark green for even online */
 .server-online:nth-child(even) {
   background-color: #22aa22;
 }
 
-/* Light green for odd online */
 .server-online:nth-child(odd) {
   background-color: #33bb33;
 }
 
-/* Dark red for even offline */
 .server-offline:nth-child(even) {
   background-color: #aa2222;
 }
 
-/* Light red for odd offline */
 .server-offline:nth-child(odd) {
   background-color: #bb3333;
 }
 
-/* Round top left on header row */
 th:first-child {
   -webkit-border-top-left-radius: 8px;
      -moz-border-top-left-radius: 8px;
@@ -126,7 +99,6 @@ th:first-child {
           border-top-left-radius: 8px;
 }
 
-/* Round top right on header row */
 th:last-child {
   -webkit-border-top-right-radius: 8px;
      -moz-border-top-right-radius: 8px;
@@ -135,7 +107,6 @@ th:last-child {
           border-top-right-radius: 8px;
 }
 
-/* Round bottom left on last row */
 tr:last-child td:first-child {
   -webkit-border-bottom-left-radius: 8px;
      -moz-border-bottom-left-radius: 8px;
@@ -144,7 +115,6 @@ tr:last-child td:first-child {
           border-bottom-left-radius: 8px;
 }
 
-/* Round bottom right on last row */
 tr:last-child td:last-child {
   -webkit-border-bottom-right-radius: 8px;
      -moz-border-bottom-right-radius: 8px;
