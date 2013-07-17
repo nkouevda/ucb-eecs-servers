@@ -1,8 +1,8 @@
 /* Nikita Kouevda, Anthony Sutardja */
-/* 2013/07/16 */
+/* 2013/07/17 */
 
 body {
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans';
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   background-color: #dddddd;
 }
 
@@ -12,7 +12,7 @@ body {
   margin: 0 auto;
 }
 
-.site-header, .site-footer {
+#site-header, #site-footer {
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
