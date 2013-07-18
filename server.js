@@ -6,16 +6,15 @@ var express = require('express');
 var ejs = require('ejs');
 var fs = require('fs');
 var exec = require('child_process').exec;
+var settings = require('./settings');
 
 // Initialize the default content to be served
-var title = 'UC Berkeley EECS Servers';
-var onlineServers = [], offlineServers = [], bestHive = '';
-var refreshRate = 1000 * 60 * 5, lastUpdated = 0, minutesAgo = 0;
+var onlineServers = [], offlineServers = [], bestHive = '', lastUpdated = 0;
 
 // Retrieve the current information
 var loadFiles = function () {
   // Update the online server list
-  fs.readFile(__dirname + '/data/online.txt', 'utf-8', function (err, data) {
+  fs.readFile(__dirname + settings.onlineFile, 'utf-8', function (err, data) {
     if (err) {
       throw err;
     } else {
@@ -33,7 +32,7 @@ var loadFiles = function () {
   });
 
   // Update the offline server list
-  fs.readFile(__dirname + '/data/offline.txt', 'utf-8', function (err, data) {
+  fs.readFile(__dirname + settings.offlineFile, 'utf-8', function (err, data) {
     if (err) {
       throw err;
     } else {
@@ -49,7 +48,7 @@ var loadFiles = function () {
   });
 
   // Update the last updated time
-  fs.stat(__dirname + '/data/online.txt', function (err, stats) {
+  fs.stat(__dirname + settings.onlineFile, function (err, stats) {
     if (err) {
       throw err;
     } else {
@@ -58,7 +57,7 @@ var loadFiles = function () {
   });
 
   // Load the new best hive
-  fs.readFile(__dirname + '/data/best_hive.txt', 'utf-8', function (err, data) {
+  fs.readFile(__dirname + settings.bestHiveFile, 'utf-8', function (err, data) {
     if (err) {
       throw err;
     } else {
@@ -70,28 +69,30 @@ var loadFiles = function () {
 // Load the initial information
 loadFiles();
 
-// Update the files repeatedly
-(function updateFiles() {
-  // Run the update script
-  exec(__dirname + '/bin/update.sh', function (err, stdout, stderr) {
-    if (stdout) {
-      console.log(stdout);
-    }
+// Update the files repeatedly if refresh is enabled
+if (settings.refresh) {
+  (function updateFiles() {
+    // Run the update script
+    exec(__dirname + settings.updateFile, function (err, stdout, stderr) {
+      if (stdout) {
+        console.log(stdout);
+      }
 
-    if (stderr) {
-      console.error(stderr);
-    }
+      if (stderr) {
+        console.error(stderr);
+      }
 
-    if (err) {
-      throw err;
-    } else {
-      // Load the new information
-      loadFiles();
-    }
-  });
+      if (err) {
+        throw err;
+      } else {
+        // Load the new information
+        loadFiles();
+      }
+    });
 
-  setTimeout(updateFiles, refreshRate);
-})();
+    setTimeout(updateFiles, settings.refreshRate);
+  })();
+}
 
 // Instantiate the app and set up ejs
 var app = express();
@@ -104,13 +105,13 @@ app.use('/static', express.static(__dirname + '/static'));
 
 // Serve index.ejs at the root
 app.get('/', function (req, res) {
-  minutesAgo = Math.floor((new Date() - lastUpdated) / (1000 * 60));
+  var minutesAgo = Math.floor((new Date() - lastUpdated) / (1000 * 60));
 
   // Render index.ejs with the header, title, subtitle, and servers
   res.render('index', {
-    header: title,
-    title: title,
-    subtitle: 'Updated every ' + (refreshRate / (1000 * 60)) +
+    header: settings.title,
+    title: settings.title,
+    subtitle: 'Updated every ' + (settings.refreshRate / (1000 * 60)) +
       ' minutes; last updated ' + minutesAgo + ' minute' +
       (minutesAgo === 1 ? '' : 's') + ' ago',
     servers: onlineServers.concat(offlineServers)
@@ -123,4 +124,4 @@ app.get('/best_hive', function (req, res) {
 });
 
 // Listen on the given port, defaulting to 3000
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || settings.port);
