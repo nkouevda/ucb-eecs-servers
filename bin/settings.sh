@@ -1,5 +1,5 @@
 # Nikita Kouevda
-# 2013/06/30
+# 2013/07/17
 
 # Authentication
 username="USERNAME"
@@ -9,7 +9,7 @@ ssh_config=("-oConnectTimeout=3" "-oServerAliveInterval=3" \
 
 # Directories and files
 remote_dir="ucb-eecs-servers"
-config_script="bin/config.sh"
+settings_script="bin/settings.sh"
 remote_main_script="bin/remote-main.sh"
 remote_script="bin/remote.sh"
 server_list="data/servers.txt"

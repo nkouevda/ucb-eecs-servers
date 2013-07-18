@@ -7,7 +7,7 @@ Current usage data for UC Berkeley EECS servers.
 
 ## Remote Update
 
-To set up remote update, edit `bin/config.sh` and then execute:
+To set up remote update, edit `bin/settings.sh` and then execute:
 
     bash bin/setup.sh
 

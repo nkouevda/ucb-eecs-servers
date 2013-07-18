@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Nikita Kouevda
-# 2013/06/30
+# 2013/07/17
 
 # Change directory to parent directory of location of script
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
-# Load configuration
-. "bin/config.sh"
+# Load settings
+. "bin/settings.sh"
 
 # Run the main remote script
 ssh "${ssh_config[@]}" "$username@$server" "$remote_dir/$remote_main_script"
