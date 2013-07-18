@@ -7,6 +7,11 @@ body {
   background-color: #efefef;
 }
 
+#container {
+  width: 750px;
+  margin: 0 auto;
+}
+
 #site-header, #site-footer {
   text-align: center;
   padding: 60px 0;
