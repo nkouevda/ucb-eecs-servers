@@ -1,5 +1,5 @@
 // Nikita Kouevda
-// 2013/07/16
+// 2013/07/17
 
 // Required libraries
 var express = require('express');
@@ -8,7 +8,7 @@ var fs = require('fs');
 var exec = require('child_process').exec;
 
 // Initialize the default content to be served
-var title = 'Current Status of UCB EECS Servers';
+var title = 'UC Berkeley EECS Servers';
 var onlineServers = [], offlineServers = [], bestHive = '';
 var refreshRate = 1000 * 60 * 5, lastUpdated = 0, minutesAgo = 0;
 
