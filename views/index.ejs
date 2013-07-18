@@ -11,28 +11,33 @@
     <link href="/static/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/index.css" rel="stylesheet" type="text/css" />
   </head>
-  <body onload="sortServerTable(2);">
+  <body onload="sortServerTable('js-sort-load');">
     <div id="container">
       <header id="site-header">
         <h1 class="site-header-title"><%= header %></h1>
         <p class="site-header-subtitle"><%= subtitle %></p>
       </header>
       <section id="content">
-        <table id="servers">
+        <table id="js-servers">
           <thead>
             <tr>
-              <th><a href="javascript:sortServerTable(0);">Server<div class="sort-arrow"></div></a></th>
-              <th><a href="javascript:sortServerTable(1);">Users<div class="sort-arrow"></div></a></th>
-              <th><a href="javascript:sortServerTable(2);">Load<div class="sort-arrow"></div></a></th>
+              <th><a id="js-sort-name" href="#" onclick="sortServerTable('js-sort-name'); return false;">Name<div class="arrow-down"></div></a></th>
+              <th><a id="js-sort-users" href="#" onclick="sortServerTable('js-sort-users'); return false;">Users<div class="arrow-down"></div></a></th>
+              <th><a id="js-sort-load" href="#" onclick="sortServerTable('js-sort-load'); return false;">Load<div class="arrow-down"></div></a></th>
             </tr>
           </thead>
           <tbody>
-  <% servers.forEach(function (server) { -%>
-  <% if (server.online) { -%>
+  <% onlineServers.forEach(function (server) { -%>
             <tr class="server-online">
-  <% } else { -%>
+              <td class="server-name"><%= server.name %></td>
+              <td class="server-users"><%= server.users %></td>
+              <td class="server-load"><%= server.load %></td>
+            </tr>
+  <% }); -%>
+          </tbody>
+          <tbody>
+  <% offlineServers.forEach(function (server) { -%>
             <tr class="server-offline">
-  <% } -%>
               <td class="server-name"><%= server.name %></td>
               <td class="server-users"><%= server.users %></td>
               <td class="server-load"><%= server.load %></td>

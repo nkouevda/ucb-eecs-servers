@@ -1,50 +1,71 @@
 // Nikita Kouevda
-// 2013/07/04
+// 2013/07/18
 
 // Sort by the first element of the given pairs
 var sortPairsNumerical = function (a, b) {
-  return a[0] - b[0];
+  return b[0] - a[0];
 };
 
-// Sort the table of servers by the given column
+// Sort the servers table by the given column (one of js-sort-{name,users,load})
 var sortServerTable = function (column) {
-  var table = document.getElementById('servers').tBodies[0];
-  var online = [], offline = [];
-  var i, length, row, content;
+  var columnIndex = {
+    'js-sort-name': 0,
+    'js-sort-users': 1,
+    'js-sort-load': 2
+  }[column];
 
-  for (i = 0, length = table.rows.length; i < length; ++i) {
-    row = table.rows[i];
-    content = row.cells[column].textContent || row.cells[column].innerText;
+  // This should never happen
+  if (typeof columnIndex === 'undefined') {
+    return false;
+  }
 
-    // Interpret the values as floats unless sorting by name
-    if (column !== 0) {
-      content = parseFloat(content);
+  var arrowDiv = document.querySelector('#' + column + ' > div');
+  var oldClassName = arrowDiv.className;
+  var tBodies = document.getElementById('js-servers').tBodies, tBodiesLength, i;
+  var tBody, rows, rowsLength, j, row, content, pairs, pairsLength;
+
+  // Sort each table body separately
+  for (i = 0, tBodiesLength = tBodies.length; i < tBodiesLength; ++i) {
+    tBody = tBodies[i];
+    rows = tBody.rows;
+    pairs = [];
+
+    for (j = 0, rowsLength = rows.length; j < rowsLength; ++j) {
+      row = rows[j], content = row.cells[columnIndex].textContent;
+
+      // Interpret each value as a float unless sorting by name
+      if (column !== 'js-sort-name') {
+        content = parseFloat(content);
+      }
+
+      pairs.push([content, row]);
     }
 
-    // Add this row to the corresponding array
-    if (row.className === 'server-online') {
-      online.push([content, row]);
+    // Only use the default lexicographic sort for names
+    if (column === 'js-sort-name') {
+      pairs.sort().reverse();
     } else {
-      offline.push([content, row]);
+      pairs.sort(sortPairsNumerical);
+    }
+
+    // Reverse sort if this column was previously sorted
+    if (oldClassName === 'arrow-up') {
+      pairs.reverse();
+    }
+
+    // Append the sorted rows in order
+    for (j = 0, pairsLength = pairs.length; j < pairsLength; ++j) {
+      tBody.appendChild(pairs[j][1]);
     }
   }
 
-  // Sort names lexicographically and numbers numerically
-  if (column === 0) {
-    online.sort();
-    offline.sort();
-  } else {
-    online.sort(sortPairsNumerical).reverse();
-    offline.sort(sortPairsNumerical).reverse();
-  }
+  // Flip all sorting arrows down
+  document.querySelector('#js-sort-name > div').className = 'arrow-down';
+  document.querySelector('#js-sort-users > div').className = 'arrow-down';
+  document.querySelector('#js-sort-load > div').className = 'arrow-down';
 
-  // Append the online servers in order
-  for (i = 0, length = online.length; i < length; ++i) {
-    table.appendChild(online[i][1]);
-  }
-
-  // Append the offline servers in order
-  for (i = 0, length = offline.length; i < length; ++i) {
-    table.appendChild(offline[i][1]);
+  // Flip this column's arrow up if it was previously down
+  if (oldClassName === 'arrow-down') {
+    arrowDiv.className = 'arrow-up';
   }
 };

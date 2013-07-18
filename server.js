@@ -1,5 +1,5 @@
 // Nikita Kouevda
-// 2013/07/17
+// 2013/07/18
 
 // Required libraries
 var express = require('express');
@@ -114,7 +114,8 @@ app.get('/', function (req, res) {
     subtitle: 'Updated every ' + (settings.refreshRate / (1000 * 60)) +
       ' minutes; last updated ' + minutesAgo + ' minute' +
       (minutesAgo === 1 ? '' : 's') + ' ago',
-    servers: onlineServers.concat(offlineServers)
+    onlineServers: onlineServers,
+    offlineServers: offlineServers
   });
 });
 

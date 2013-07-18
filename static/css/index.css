@@ -29,13 +29,20 @@ body {
   text-shadow: 1px 1px 1px #dddddd;
 }
 
-.sort-arrow {
+.arrow-up, .arrow-down {
   display: inline-block;
-  border-top: 0.4em solid black;
   border-left: 0.4em solid transparent;
   border-right: 0.4em solid transparent;
   margin-left: 0.5em;
   margin-bottom: 0.2em;
+}
+
+.arrow-up {
+  border-bottom: 0.4em solid black;
+}
+
+.arrow-down {
+  border-top: 0.4em solid black;
 }
 
 #site-footer {
