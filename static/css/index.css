@@ -1,5 +1,5 @@
 /* Nikita Kouevda, Anthony Sutardja */
-/* 2013/07/18 */
+/* 2013/07/19 */
 
 body {
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -8,25 +8,45 @@ body {
 }
 
 #container {
-  width: 750px;
+  width: 50em;
   margin: 0 auto;
 }
 
 #site-header, #site-footer {
   text-align: center;
-  padding: 60px 0;
+  padding: 3.5em 0;
 }
 
-.site-header-title {
-  font-size: 2.4em;
-  text-shadow: 1px 1px 1px #bbbbbb;
+#site-header-title, #site-footer-content {
+  text-shadow: 0.05em 0.05em 0.05em #bbbbbb;
 }
 
-.site-header-subtitle {
-  font-size: 1.2em;
+#site-header-title {
+  font-size: 2.5em;
+}
+
+#site-header-subtitle {
+  font-size: 1.25em;
   font-style: italic;
-  margin-top: 30px;
-  text-shadow: 1px 1px 1px #dddddd;
+  margin-top: 1.5em;
+  text-shadow: 0.05em 0.05em 0.05em #dddddd;
+}
+
+#site-footer-content {
+  font-size: 2em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.5;
+}
+
+.link-separator {
+  margin: 0 0.5em;
 }
 
 .arrow-up, .arrow-down {
@@ -43,24 +63,6 @@ body {
 
 .arrow-down {
   border-top: 0.4em solid black;
-}
-
-#site-footer {
-  font-size: 1.8em;
-  text-shadow: 1px 1px 1px #bbbbbb;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  opacity: 0.5;
-}
-
-.link-separator {
-  margin: 0 0.5em;
 }
 
 table {
@@ -94,17 +96,17 @@ th {
 }
 
 th:first-child {
-  border-top-left-radius: 6px;
+  border-top-left-radius: 0.5em;
 }
 
 th:last-child {
-  border-top-right-radius: 6px;
+  border-top-right-radius: 0.5em;
 }
 
 tr:last-child td:first-child {
-  border-bottom-left-radius: 6px;
+  border-bottom-left-radius: 0.5em;
 }
 
 tr:last-child td:last-child {
-  border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 0.5em;
 }
