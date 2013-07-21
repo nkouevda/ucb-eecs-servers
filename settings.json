@@ -1,6 +1,6 @@
 {
   "title": "UC Berkeley EECS Servers",
-  "updateFile": "/bin/update.sh",
+  "updateScript": "/bin/update.sh",
   "onlineFile": "/data/online.txt",
   "offlineFile": "/data/offline.txt",
   "bestHiveFile": "/data/best_hive.txt",

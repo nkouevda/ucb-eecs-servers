@@ -69,7 +69,7 @@ var readUpdateTime = exports.readUpdateTime = function (callback) {
 };
 
 var runRemoteUpdate = exports.runRemoteUpdate = function (callback) {
-  exec(__dirname + settings.updateFile, function (err, stdout, stderr) {
+  exec(__dirname + settings.updateScript, function (err, stdout, stderr) {
     if (stdout) {
       console.log(stdout);
     }
