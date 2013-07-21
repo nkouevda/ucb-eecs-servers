@@ -1,7 +1,7 @@
 <!doctype html>
 
 <!-- Nikita Kouevda, Anthony Sutardja -->
-<!-- 2013/07/19 -->
+<!-- 2013/07/21 -->
 
 <html lang="en">
   <head>
@@ -27,22 +27,22 @@
             </tr>
           </thead>
           <tbody>
-  <% onlineServers.forEach(function (server) { -%>
+<% onlineServers.forEach(function (server) { -%>
             <tr class="server-online">
               <td class="server-name"><%= server.name %></td>
               <td class="server-users"><%= server.users %></td>
               <td class="server-load"><%= server.load %></td>
             </tr>
-  <% }); -%>
+<% }); -%>
           </tbody>
           <tbody>
-  <% offlineServers.forEach(function (server) { -%>
+<% offlineServers.forEach(function (server) { -%>
             <tr class="server-offline">
               <td class="server-name"><%= server.name %></td>
               <td class="server-users"><%= server.users %></td>
               <td class="server-load"><%= server.load %></td>
             </tr>
-  <% }); -%>
+<% }); -%>
           </tbody>
         </table>
       </section>
