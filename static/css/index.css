@@ -1,5 +1,5 @@
 /* Nikita Kouevda, Anthony Sutardja */
-/* 2013/07/19 */
+/* 2013/07/21 */
 
 body {
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -103,10 +103,10 @@ th:last-child {
   border-top-right-radius: 0.5em;
 }
 
-tr:last-child td:first-child {
+tbody:last-child > tr:last-child > td:first-child {
   border-bottom-left-radius: 0.5em;
 }
 
-tr:last-child td:last-child {
+tbody:last-child > tr:last-child > td:last-child {
   border-bottom-right-radius: 0.5em;
 }
