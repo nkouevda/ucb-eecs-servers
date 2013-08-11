@@ -1,7 +1,7 @@
 {
   "name": "ucb-eecs-servers",
   "version": "0.0.1",
-  "description": "Current usage data for UC Berkeley's EECS servers.",
+  "description": "Current usage data for UC Berkeley EECS servers.",
   "author": "Nikita Kouevda <nkouevda@gmail.com>",
   "contributors": [
     "Anthony Sutardja <anthony.sutardja@gmail.com>"

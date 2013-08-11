@@ -1,16 +1,16 @@
 # Nikita Kouevda
-# 2013/04/09
+# 2013/08/11
 
-# OS X Finder
+# Finder
 .DS_Store
 
-# Temporary Vim files
+# Vim
 *.swp
 
-# Node modules
+# Node
 node_modules
 
-# Output files
+# Data
 data/online.txt
 data/offline.txt
 data/best_hive.txt

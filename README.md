@@ -1,27 +1,37 @@
 <!-- Nikita Kouevda, Anthony Sutardja -->
-<!-- 2013/07/17 -->
+<!-- 2013/08/11 -->
 
 # ucb-eecs-servers
 
 Current usage data for UC Berkeley EECS servers.
 
-## Remote Update
+## Setup
 
-To set up remote update, edit `bin/settings.sh` and then execute:
+    git clone https://github.com/nkouevda/ucb-eecs-servers.git
+    cd ucb-eecs-servers
+    npm install
+
+Edit `bin/settings.sh` and then:
 
     bash bin/setup.sh
 
-To update manually:
+## Usage
+
+To update data manually:
 
     bash bin/update.sh
 
-## Server
+To run the server:
 
-Edit the settings in `settings.json` and then run:
+    npm start
+
+or
 
     node server.js
 
-Note that by default, this will also run remote update every 5 minutes.
+Note that by default, this will also update data every 5 minutes. To change this
+behavior, change the `refreshRate` in `settings.json` to the desired value (in
+milliseconds). `0` will disable it altogether.
 
 ## License
 

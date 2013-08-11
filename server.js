@@ -1,11 +1,12 @@
 // Nikita Kouevda
-// 2013/07/21
+// 2013/08/11
 
 // External dependencies
 var express = require('express');
 var ejs = require('ejs');
 
 // Internal dependencies
+var meta = require('./package');
 var settings = require('./settings');
 var update = require('./update');
 
@@ -30,7 +31,7 @@ var updateAllFields = function () {
 updateAllFields();
 
 // Update repeatedly unless refresh is disabled
-if (settings.refresh) {
+if (settings.refreshRate > 0) {
   (function updateFiles() {
     update.runRemoteUpdate(updateAllFields);
 
@@ -38,29 +39,44 @@ if (settings.refresh) {
   })();
 }
 
+var port = process.env.PORT || settings.port;
 var app = express();
+
+// Template engine
 app.engine('html', ejs.__express);
 app.set('view engine', 'ejs');
 
+// Template variables
+app.locals({
+  repository: meta.repository.url,
+  title: settings.title
+});
+
+// Match routes exactly
+app.enable('strict routing');
+app.enable('case sensitive routing');
+
+// Middleware
+app.use(express.logger());
 app.use('/static', express.static(__dirname + '/static'));
+app.use(express.bodyParser());
 
 app.get('/', function (req, res) {
   var minutesAgo = Math.floor((new Date() - lastUpdatedTime) / (1000 * 60));
 
   res.render('index', {
-    header: settings.title,
-    title: settings.title,
     subtitle: 'Updated every ' + (settings.refreshRate / (1000 * 60)) +
-      ' minutes; last updated ' + minutesAgo + ' minute' +
-      (minutesAgo === 1 ? '' : 's') + ' ago',
+              ' minutes; last updated ' + minutesAgo + ' minute' +
+              (minutesAgo === 1 ? '' : 's') + ' ago',
     onlineServers: onlineServers,
     offlineServers: offlineServers
   });
 });
 
-// Serve a plaintext version of the least busy hive server
+// Return the least busy hive server in plain text
 app.get('/best_hive', function (req, res) {
   res.send(bestHive);
 });
 
-app.listen(process.env.PORT || settings.port);
+app.listen(port);
+console.log('%s listening on port %d', meta.name, port);
