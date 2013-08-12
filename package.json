@@ -4,7 +4,10 @@
   "description": "Current usage data for UC Berkeley EECS servers.",
   "author": "Nikita Kouevda <nkouevda@gmail.com>",
   "contributors": [
-    "Anthony Sutardja <anthony.sutardja@gmail.com>"
+    {
+      "name": "Anthony Sutardja",
+      "email": "anthony.sutardja@gmail.com"
+    }
   ],
   "repository": {
     "type": "git",
