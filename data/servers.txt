@@ -1,12 +1,17 @@
 # Nikita Kouevda
-# 2013/05/10
+# 2013/09/20
 
 # Main Servers
 bcom11.eecs.berkeley.edu
+bcom16.eecs.berkeley.edu
+bcom17.eecs.berkeley.edu
 bcom18.eecs.berkeley.edu
+bcom19.eecs.berkeley.edu
 bcom20.eecs.berkeley.edu
 bcom21.eecs.berkeley.edu
 bcom22.eecs.berkeley.edu
+bcom23.eecs.berkeley.edu
+c199.eecs.berkeley.edu
 cory.eecs.berkeley.edu
 cube.cs.berkeley.edu
 ilinux1.eecs.berkeley.edu
@@ -56,6 +61,19 @@ p380-42.eecs.berkeley.edu
 p380-43.eecs.berkeley.edu
 p380-44.eecs.berkeley.edu
 p380-45.eecs.berkeley.edu
+t7400-1.eecs.berkeley.edu
+t7400-2.eecs.berkeley.edu
+t7400-3.eecs.berkeley.edu
+t7400-4.eecs.berkeley.edu
+t7400-5.eecs.berkeley.edu
+t7400-6.eecs.berkeley.edu
+t7400-7.eecs.berkeley.edu
+t7400-8.eecs.berkeley.edu
+t7400-9.eecs.berkeley.edu
+t7400-10.eecs.berkeley.edu
+t7400-11.eecs.berkeley.edu
+t7400-12.eecs.berkeley.edu
+t7400-13.eecs.berkeley.edu
 
 # 275 Soda Hall
 america.cs.berkeley.edu
