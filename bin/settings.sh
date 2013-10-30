@@ -1,11 +1,11 @@
 # Nikita Kouevda
-# 2013/09/21
+# 2013/10/29
 
 # Authentication
 username="TODO"
 server="TODO"
 ssh_config=("-oConnectTimeout=3" "-oServerAliveInterval=3" \
-    "-oStrictHostKeyChecking=no")
+  "-oStrictHostKeyChecking=no")
 
 # Directories and files
 remote_dir="ucb-eecs-servers"
