@@ -5,5 +5,5 @@
   "onlineFile": "/data/online.txt",
   "offlineFile": "/data/offline.txt",
   "bestHiveFile": "/data/best_hive.txt",
-  "refreshRate": 300000
+  "refreshInterval": 300000
 }

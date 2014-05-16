@@ -1,5 +1,5 @@
 // Nikita Kouevda
-// 2013/08/11
+// 2014/05/15
 
 // External dependencies
 var express = require('express');
@@ -31,11 +31,11 @@ var updateAllFields = function () {
 updateAllFields();
 
 // Update repeatedly unless refresh is disabled
-if (settings.refreshRate > 0) {
+if (settings.refreshInterval > 0) {
   (function updateFiles() {
     update.runRemoteUpdate(updateAllFields);
 
-    setTimeout(updateFiles, settings.refreshRate);
+    setTimeout(updateFiles, settings.refreshInterval);
   })();
 }
 
@@ -65,7 +65,7 @@ app.get('/', function (req, res) {
   var minutesAgo = Math.floor((new Date() - lastUpdatedTime) / (1000 * 60));
 
   res.render('index', {
-    subtitle: 'Updated every ' + (settings.refreshRate / (1000 * 60)) +
+    subtitle: 'Updated every ' + (settings.refreshInterval / (1000 * 60)) +
               ' minutes; last updated ' + minutesAgo + ' minute' +
               (minutesAgo === 1 ? '' : 's') + ' ago',
     onlineServers: onlineServers,
