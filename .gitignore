@@ -1,11 +1,5 @@
 # Nikita Kouevda
-# 2013/08/11
-
-# Finder
-.DS_Store
-
-# Vim
-*.swp
+# 2014/08/30
 
 # Node
 node_modules
