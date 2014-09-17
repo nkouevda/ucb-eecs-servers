@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Nikita Kouevda
-# 2014/06/04
+# 2014/09/16
 
-# Change directory to parent directory of location of script
-cd "$(dirname "${BASH_SOURCE[0]}")/.."
+# Switch to parent directory of location of script
+cd "$(dirname "$BASH_SOURCE")/.."
 
 # Load settings
 . "bin/settings.sh"
