@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Nikita Kouevda
-# 2014/09/16
+# 2015/05/17
 
 # Switch to parent directory of location of script
 cd "$(dirname "$BASH_SOURCE")/.."
@@ -15,7 +15,7 @@ tmp_dir="tmp.$$"
 mkdir -p "$tmp_dir"
 
 # Query each server in a background subshell for concurrent execution
-for server in "$(grep -vE '^(#|$)' "$server_list")"; do
+sed -n '/^[^#]/p' "$server_list" | while read -r server; do
   (
     # Retrieve and write output
     ssh "${ssh_config[@]}" "$username@$server" \
