@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Nikita Kouevda
-# 2015/05/17
+# 2015/05/18
 
 # Switch to parent directory of location of script
 cd "$(dirname "$BASH_SOURCE")/.."
@@ -19,7 +19,7 @@ sed -n '/^[^#]/p' "$server_list" | while read -r server; do
   (
     # Retrieve and write output
     ssh "${ssh_config[@]}" "$username@$server" \
-      "$remote_dir/$info_script $server" >"$tmp_dir/$server" 2>/dev/null
+        "$remote_dir/$info_script $server" >"$tmp_dir/$server" 2>/dev/null
 
     # Record the server as offline if ssh returned non-0
     (( $? )) && echo "$server" >>"$offline_servers"
