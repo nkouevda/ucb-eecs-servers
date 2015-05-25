@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Nikita Kouevda
-# 2015/05/18
+# 2015/05/24
 
 # Switch to parent directory of location of script
 cd "$(dirname "$BASH_SOURCE")/.."
@@ -14,16 +14,12 @@ cd "$(dirname "$BASH_SOURCE")/.."
 tmp_dir="tmp.$$"
 mkdir -p "$tmp_dir"
 
-# Query each server in a background subshell for concurrent execution
+# Query each server in background for concurrent execution
 sed -n '/^[^#]/p' "$server_list" | while read -r server; do
-  (
-    # Retrieve and write output
-    ssh "${ssh_config[@]}" "$username@$server" \
-        "$remote_dir/$info_script $server" >"$tmp_dir/$server" 2>/dev/null
-
-    # Record the server as offline if ssh returned non-0
-    (( $? )) && echo "$server" >>"$offline_servers"
-  ) &
+  # Retrieve and write output; record server as offline if ssh returns nonzero
+  ssh "${ssh_config[@]}" "$username@$server" \
+      "$remote_dir/$info_script $server" >"$tmp_dir/$server" 2>/dev/null \
+      || echo "$server" >>"$offline_servers" &
 done
 
 # Wait for all background jobs to finish
