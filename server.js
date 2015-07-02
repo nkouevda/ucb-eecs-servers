@@ -1,6 +1,3 @@
-// Nikita Kouevda
-// 2014/05/15
-
 // External dependencies
 var express = require('express');
 var ejs = require('ejs');

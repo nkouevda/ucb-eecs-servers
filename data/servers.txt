@@ -1,6 +1,3 @@
-# Nikita Kouevda
-# 2013/09/28
-
 # Main Servers
 bcom11.eecs.berkeley.edu
 bcom16.eecs.berkeley.edu

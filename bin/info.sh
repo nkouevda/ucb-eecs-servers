@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Nikita Kouevda
-# 2014/09/16
-
 # Number of users online
 users="$(who | wc -l | awk '{ print $1 }')"
 

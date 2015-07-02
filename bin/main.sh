@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# Nikita Kouevda
-# 2015/05/24
-
 # Switch to parent directory of location of script
 cd "$(dirname "$BASH_SOURCE")/.."
 

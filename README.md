@@ -1,6 +1,3 @@
-<!-- Nikita Kouevda, Anthony Sutardja -->
-<!-- 2014/10/05 -->
-
 # ucb-eecs-servers
 
 Current usage data for UC Berkeley EECS servers.

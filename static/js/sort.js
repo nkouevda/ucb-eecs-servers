@@ -1,6 +1,3 @@
-// Nikita Kouevda
-// 2013/07/18
-
 // Sort by the first element of the given pairs
 var sortPairsNumerical = function (a, b) {
   return b[0] - a[0];

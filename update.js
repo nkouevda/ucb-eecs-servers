@@ -1,6 +1,3 @@
-// Nikita Kouevda
-// 2013/07/21
-
 // External dependencies
 var fs = require('fs');
 var exec = require('child_process').exec;

@@ -1,6 +1,3 @@
-# Nikita Kouevda
-# 2015/05/18
-
 # Authentication
 username="TODO"
 server="TODO"
