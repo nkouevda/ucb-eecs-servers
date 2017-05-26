@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Switch to parent directory of location of script
 cd "$(dirname "$BASH_SOURCE")/.."
 

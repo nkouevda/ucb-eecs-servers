@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 # Number of users online
 users="$(who | wc -l | awk '{ print $1 }')"
 
