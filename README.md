@@ -32,4 +32,4 @@ To change this behavior, change `refreshInterval` in
 
 ## License
 
-Licensed under the [MIT License](http://www.opensource.org/licenses/MIT).
+[MIT License](LICENSE.txt)
