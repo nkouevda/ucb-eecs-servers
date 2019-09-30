@@ -44,19 +44,17 @@ app.engine('html', ejs.__express);
 app.set('view engine', 'ejs');
 
 // Template variables
-app.locals({
+app.locals = {
   repository: meta.repository.url,
   title: settings.title
-});
+};
 
 // Match routes exactly
 app.enable('strict routing');
 app.enable('case sensitive routing');
 
 // Middleware
-app.use(express.logger());
 app.use('/static', express.static(__dirname + '/static'));
-app.use(express.bodyParser());
 
 app.get('/', function (req, res) {
   var minutesAgo = Math.floor((new Date() - lastUpdatedTime) / (1000 * 60));
