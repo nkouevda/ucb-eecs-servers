@@ -2,11 +2,9 @@
 
 set -euo pipefail
 
-# Switch to parent directory of location of script
-cd "$(dirname "$BASH_SOURCE")/.."
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
-# Load settings
-. "bin/settings.sh"
+source "bin/settings.sh"
 
 # Run the main remote script
 ssh "${ssh_config[@]}" "$username@$server" "$remote_dir/$main_script"

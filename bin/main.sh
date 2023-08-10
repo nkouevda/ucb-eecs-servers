@@ -2,16 +2,14 @@
 
 set -euo pipefail
 
-# Switch to parent directory of location of script
-cd "$(dirname "$BASH_SOURCE")/.."
+cd "$(dirname "${BASH_SOURCE[0]}")/.."
 
-# Load settings
-. "bin/settings.sh"
+source "bin/settings.sh"
 
-# Clear the offline servers file and make the temporary directory
+# shellcheck disable=SC2188
 >"$offline_servers"
-tmp_dir="tmp.$$"
-mkdir -p "$tmp_dir"
+
+tmp_dir="$(mktemp -d)"
 
 # Query each server in background for concurrent execution
 sed -n '/^[^#]/p' "$server_list" | while read -r server; do
@@ -24,6 +22,7 @@ done
 # Wait for all background jobs to finish
 wait
 
-# Generate the new online servers file and remove the temporary directory
+# Generate the new online servers file
 cat "$tmp_dir"/* >"$online_servers"
+
 rm -r "$tmp_dir"
